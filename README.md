@@ -21,8 +21,8 @@ licensed under CC-BY-SA 4.0 International.
 There's a few features still missing on this project, but I'm really happy with
 where it's at. Here's what still needs to be done for the project to feel complete:
 
-* Visual Playlist support for the "Band Page" version of the widget
-* A working visualizer. The image is just a placeholder.
+* [Visual Playlist support](https://codeberg.org/deadsuperhero/myspace-music-player-extended/issues/1) for the "Band Page" version of the widget
+* [A working visualizer](https://codeberg.org/deadsuperhero/myspace-music-player-extended/issues/2). The image is just a placeholder.
 
 The first one is "probably easy", just will take some time to build,
 the second one is "probably hard", because I understand very little about
