@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<html>
+  <head>
+    <title>Myspace Music Player Song Example</title>
+		<!-- Include Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" src="js/amplitude.js"></script>
+
+  </head>
+  <body>
+
+    <h1 style="text-align:center">Myspace Music Player Extended Example</h1>
+    <div class="nav" style="text-align:center">
+      <a href="index.html">Example One - Band Style Widget</a>
+      <a href="index2.html">Example Two - Profile Style Widget</a>
+    </div>
+    <h2 style="text-align:center">Profile Widget</h2>
+    <div id="song-player" class="mono">
+            <div class="control-container">
+                  <div class="amplitude-play-pause mono" id="play-pause">
+                    <button id="play-pause" class="player mono">
+                      <i class="icon-pause mono"></i>
+                      <i class="icon-pause mono shadow"></i>
+                      <i class="icon-play mono"></i>
+                      <i class="icon-play mono shadow"></i>
+                    </button>
+                  </div>
+              <div class="meta-container">
+                <div id="song-meta">
+                  <div class="meta-left">
+                  <img data-amplitude-song-info="cover_art_url" amplitude-main-song-info="true" class="album"/>
+                  <div class="song-text">
+                    <span data-amplitude-song-info="name" class="song-name"></span>
+                    <span data-amplitude-song-info="artist"></span>
+                      <div class="time-container">
+                        <span class="current-time">
+                          <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+                        </span>
+                        <span class="divider">/</span>
+                        <span class="duration">
+                          <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+                        </span>
+                      </div>
+                  </div>
+                </div>
+                  <!-- Visualizer Goes Here -->
+                  <div class="mmp-eq-container">
+                    <img src="img/eq_pause.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <p style="text-align:center">This widget is designed to resemble Myspace user profiles, where
+          users were restricted to one song at a time.</p>
+
+      </body>
+    </html>
+
+  <script type="text/javascript">
+      Amplitude.init({
+      "bindings": {
+        37: 'prev',
+        39: 'next',
+        32: 'play_pause'
+      },
+      "songs": [
+        {
+          "name": "Prologue",
+          "artist": "Chemical Computer",
+          "album": "Static Skies",
+          "url": "audio/prologue.ogg",
+          "cover_art_url": "img/static-skies-demo.jpg"
+        }
+      ]
+    });
+
+    window.onkeydown = function(e) {
+        return !(e.keyCode == 32);
+    };
+
+    /*
+      Handles a click on the song played progress bar.
+    */
+    document.getElementById('button#play').addEventListener('click', function(e){
+      var offset = this.getBoundingClientRect();
+      var x = e.pageX - offset.left;
+
+      Amplitude.setSongPlayedPercentage( ( parseFloat( x ) / parseFloat( this.offsetWidth) ) * 100 );
+
+    });
+  </script>

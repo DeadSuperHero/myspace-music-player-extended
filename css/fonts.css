@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'material-player';
+  src:  url('../fonts/material-player.eot?c1mf5f');
+  src:  url('../fonts/material-player.eot?c1mf5f#iefix') format('embedded-opentype'),
+    url('../fonts/material-player.ttf?c1mf5f') format('truetype'),
+    url('../fonts/material-player.woff?c1mf5f') format('woff'),
+    url('../fonts/material-player.svg?c1mf5f#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'material-player' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-stop:before {
+  content: "\e900";
+}
+.icon-prev:before {
+  content: "\e901";
+}
+.icon-next:before {
+  content: "\e902";
+}
+.icon-play:before {
+  content: "\e903";
+}
+.icon-pause:before {
+  content: "\e904";
+}
